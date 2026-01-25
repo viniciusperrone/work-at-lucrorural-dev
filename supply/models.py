@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 from uuid import uuid4
 from cryptography.fernet import Fernet, InvalidToken
@@ -8,13 +9,13 @@ import hashlib
 
 class Fornecedor(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    nome = models.CharField(max_length=100)
-    cnpj = models.CharField(max_length=18)
-    telefone = models.CharField(max_length=255)
+    nome = models.CharField(max_length=100, verbose_name=_('Nome'))
+    cnpj = models.CharField(max_length=18, verbose_name=_('CNPJ'))
+    telefone = models.CharField(max_length=255, verbose_name=_('Telefone'))
 
     class Meta:
-        verbose_name = 'Fornecedor'
-        verbose_name_plural = 'Fornecedores'
+        verbose_name = _('Fornecedor')
+        verbose_name_plural = _('Fornecedores')
 
     @staticmethod
     def get_encryption_key():
