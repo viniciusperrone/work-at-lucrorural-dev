@@ -7,11 +7,11 @@ from cryptography.fernet import Fernet, InvalidToken
 import base64
 import hashlib
 
-class Fornecedor(models.Model):
+class Supplier(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    nome = models.CharField(max_length=100, verbose_name=_('Nome'))
+    name = models.CharField(max_length=100, verbose_name=_('Nome'))
     cnpj = models.CharField(max_length=18, verbose_name=_('CNPJ'))
-    telefone = models.CharField(max_length=255, verbose_name=_('Telefone'))
+    phone = models.CharField(max_length=255, verbose_name=_('Telefone'))
 
     class Meta:
         verbose_name = _('Fornecedor')
@@ -29,7 +29,7 @@ class Fornecedor(models.Model):
         if not phone:
             return ''
 
-        fernet = Fernet(Fornecedor.get_encryption_key())
+        fernet = Fernet(Supplier.get_encryption_key())
         encrypted = fernet.encrypt(phone.encode())
 
         return encrypted.decode()
@@ -40,7 +40,7 @@ class Fornecedor(models.Model):
             return ''
 
         try:
-            fernet = Fernet(Fornecedor.get_encryption_key())
+            fernet = Fernet(Supplier.get_encryption_key())
             decrypted = fernet.decrypt(encrypted_phone.encode())
 
             return decrypted.decode()

@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 class PurchaseInvoiceItems(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     invoice_number = models.IntegerField(verbose_name=_('Número da nota fiscal'))
-    supplier = models.ForeignKey('supply.Fornecedor', on_delete=models.CASCADE, verbose_name=_('Fornecedor'))
+    supplier = models.ForeignKey('supply.Supplier', on_delete=models.CASCADE, verbose_name=_('Fornecedor'))
     issue_date = models.DateField(default=dt.now, verbose_name=_('Data de emissão'))
     product_name = models.CharField(max_length=255, verbose_name=_('Nome do produto'))
     product_category = models.CharField(max_length=255, verbose_name=_('Categoria do produto'))

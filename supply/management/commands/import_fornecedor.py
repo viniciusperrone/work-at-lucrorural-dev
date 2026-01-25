@@ -3,7 +3,7 @@ import os
 from django.core.management.base import BaseCommand
 from django.conf import settings
 
-from supply.models import Fornecedor
+from supply.models import Supplier
 
 
 class Command(BaseCommand):
@@ -26,24 +26,24 @@ class Command(BaseCommand):
                 reader = csv.DictReader(file, delimiter=';')
 
                 for row in reader:
-                    fornecedor_id = row['id'].strip()
-                    nome = row['nome'].strip()
+                    supplier_id = row['id'].strip()
+                    name = row['nome'].strip()
                     cnpj = row['cnpj'].strip()
-                    telefone = row['telefone'].strip()
+                    phone = row['telefone'].strip()
 
-                    if not all([fornecedor_id, nome, cnpj, telefone]):
+                    if not all([supplier_id, name, cnpj, phone]):
                         raise ValueError('Missing fields')
 
-                    Fornecedor.objects.update_or_create(
-                        id=fornecedor_id,
+                    Supplier.objects.update_or_create(
+                        id=supplier_id,
                         defaults={
-                            'nome': nome,
+                            'name': name,
                             'cnpj': cnpj,
-                            'telefone': telefone,
+                            'phone': phone,
                         }
                     )
 
-                self.stdout.write(self.style.SUCCESS('Fornecedor data imported'))
+                self.stdout.write(self.style.SUCCESS('Supplier data imported'))
 
         except FileNotFoundError:
             self.stdout.write(
@@ -53,7 +53,7 @@ class Command(BaseCommand):
             return
         except Exception as e:
             self.stdout.write(
-                self.style.ERROR('Error importing fornecedor data')
+                self.style.ERROR('Error importing supplier data')
             )
 
             return

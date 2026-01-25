@@ -6,7 +6,7 @@ from django.core.management import BaseCommand
 from django.conf import settings
 
 from contabil.models import PurchaseInvoiceItems
-from supply.models import Fornecedor
+from supply.models import Supplier
 
 class Command(BaseCommand):
 
@@ -39,7 +39,7 @@ class Command(BaseCommand):
                     if not all([invoice_number, supplier_id, issue_date, product_name, product_category, quantity, total_amount]):
                         raise ValueError('Missing fields')
 
-                    supplier = Fornecedor.objects.get(pk=supplier_id)
+                    supplier = Supplier.objects.get(pk=supplier_id)
 
                     if supplier is None:
                         raise ValueError('Supplier not found')
