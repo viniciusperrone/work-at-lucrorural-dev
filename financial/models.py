@@ -1,6 +1,5 @@
 import uuid
 
-from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.db.models import Sum
@@ -13,26 +12,6 @@ class AccountPayable(models.Model):
     is_paid = models.BooleanField(default=False, verbose_name=_('Pago'))
     invoices = models.ManyToManyField('contabil.Invoice', related_name='account_payable', blank=True, verbose_name=_('Notas Fiscais'))
 
-    def clean(self):
-        super().clean()
-
-        if self.pk:
-            invoices = self.invoices.all()
-
-            if invoices.exists():
-                invalid_invoices = invoices.exclude(supplier=self.supply)
-
-                if invalid_invoices.exists():
-                    raise ValidationError({
-                        'invoices': _('Todas as notas fiscais devem pertencer ao mesmo fornecedor ')
-                    })
-
-
-    def delete(self, *args, **kwargs):
-        if self.invoices.exists():
-            raise ValidationError('Cannot delete multiple. There are linked invoices.')
-
-        super().delete(*args, **kwargs)
 
     @property
     def total_amount(self):
