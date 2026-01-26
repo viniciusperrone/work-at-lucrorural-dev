@@ -5,7 +5,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class PurchaseInvoiceItems(models.Model):
+class Invoice(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     invoice_number = models.IntegerField(verbose_name=_('Número da nota fiscal'))
     supplier = models.ForeignKey('supply.Supplier', on_delete=models.CASCADE, verbose_name=_('Fornecedor'))

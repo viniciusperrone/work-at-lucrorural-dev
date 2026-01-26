@@ -11,7 +11,7 @@ class AccountPayable(models.Model):
     supplier = models.ForeignKey('supply.Supplier', related_name='account_payable', on_delete=models.PROTECT, verbose_name=_('Fornecedor'))
     deadline = models.DateField(verbose_name=_('Data de Vencimento'))
     is_paid = models.BooleanField(default=False, verbose_name=_('Pago'))
-    invoices = models.ManyToManyField('contabil.PurchaseInvoiceItems', related_name='account_payable', blank=True, verbose_name=_('Notas Fiscais'))
+    invoices = models.ManyToManyField('contabil.Invoice', related_name='account_payable', blank=True, verbose_name=_('Notas Fiscais'))
 
     def clean(self):
         super().clean()

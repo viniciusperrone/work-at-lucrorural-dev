@@ -5,7 +5,7 @@ from datetime import datetime as dt
 from django.core.management import BaseCommand
 from django.conf import settings
 
-from contabil.models import PurchaseInvoiceItems
+from contabil.models import Invoice
 from supply.models import Supplier
 
 class Command(BaseCommand):
@@ -59,7 +59,7 @@ class Command(BaseCommand):
                         'total_amount': total_amount,
                     }
 
-                    PurchaseInvoiceItems.objects.create(**defaults)
+                    Invoice.objects.create(**defaults)
 
                 self.stdout.write(self.style.SUCCESS('notafiscal.csv data imported'))
 
