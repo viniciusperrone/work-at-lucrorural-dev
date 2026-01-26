@@ -1,6 +1,5 @@
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveDestroyAPIView
-from django.utils.translation import gettext_lazy as _
 
 from financial.models import AccountPayable
 from financial.serializers import AccountPayableSerializer

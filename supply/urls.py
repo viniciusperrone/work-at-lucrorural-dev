@@ -3,5 +3,5 @@ from supply.views import SupplierListAPIView
 
 
 urlpatterns = [
-    path('supply/supplier/list', SupplierListAPIView.as_view(), name='supplier-list-view'),
+    path('supply/supplier/list', SupplierListAPIView.as_view(), name='supply-supplier-list'),
 ]

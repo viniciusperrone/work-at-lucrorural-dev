@@ -26,7 +26,7 @@ class AccountPayableSerializer(serializers.ModelSerializer):
 
             if len(invalid) > 0:
                 raise serializers.ValidationError({
-                    'invoices': 'Todas as notas fiscais devem pertencer ao mesmo fornecedor'
+                    'invoices': 'All invoices must belong to the same supplier'
                 })
 
         return data
