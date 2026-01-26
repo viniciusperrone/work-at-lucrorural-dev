@@ -49,8 +49,19 @@ class Supplier(models.Model):
 
     def save(self, *args, **kwargs):
 
-        if self.phone and not self.phone.startswith('gAAAA'):
-            self.phone = self.encrypt_phone(self.phone)
+        if self.pk is None or self._state.adding:
+            if self.phone:
+                self.phone = self.encrypt_phone(self.phone)
+
+        else:
+            if self.phone:
+                old_instance = Supplier.objects.get(pk=self.pk)
+
+                if old_instance.phone:
+                    try:
+                        self.decrypt_phone(self.phone)
+                    except InvalidToken:
+                        self.phone = self.encrypt_phone(self.phone)
 
         super().save(*args, **kwargs)
 
