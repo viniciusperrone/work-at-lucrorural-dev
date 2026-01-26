@@ -49,10 +49,10 @@ class Supplier(models.Model):
 
     def save(self, *args, **kwargs):
 
-        if self.telefone and not self.telefone.startswith('gAAAA'):
-            self.telefone = self.encrypt_phone(self.telefone)
+        if self.phone and not self.phone.startswith('gAAAA'):
+            self.phone = self.encrypt_phone(self.phone)
 
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.nome
+        return self.phone
