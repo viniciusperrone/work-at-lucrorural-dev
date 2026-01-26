@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework.generics import CreateAPIView
 
-# Create your views here.
+from financial.models import AccountPayable
+from financial.serializers import AccountPayableSerializer
+
+
+class CreateAccountPayableView(CreateAPIView):
+    queryset = AccountPayable.objects.all()
+    serializer_class = AccountPayableSerializer
