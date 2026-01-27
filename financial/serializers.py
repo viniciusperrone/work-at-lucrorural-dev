@@ -1,14 +1,23 @@
 from rest_framework import serializers
 
 from financial.models import AccountPayable
+from supply.serializers import SupplierSerializer
 
 
 class AccountPayableSerializer(serializers.ModelSerializer):
+    total_amount = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
 
     class Meta:
         model = AccountPayable
-        fields = '__all__'
-        read_only_fields = ('id', 'total_amount')
+        fields = ['id', 'supplier', 'deadline', 'is_paid', 'total_amount']
+
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['supplier'] = SupplierSerializer(instance.supplier).data
+
+        return data
+
 
     def validate(self, data):
         supplier = data.get('supplier') or self.instance.supplier
