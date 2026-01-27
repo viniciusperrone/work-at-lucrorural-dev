@@ -13,9 +13,11 @@ class Supplier(models.Model):
     cnpj = models.CharField(max_length=18, verbose_name=_('CNPJ'))
     phone = models.CharField(max_length=255, verbose_name=_('Telefone'))
 
+
     class Meta:
         verbose_name = _('Fornecedor')
         verbose_name_plural = _('Fornecedores')
+
 
     @staticmethod
     def get_encryption_key():
