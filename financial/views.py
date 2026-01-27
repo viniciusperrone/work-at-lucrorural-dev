@@ -1,13 +1,17 @@
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveDestroyAPIView
+from django_filters import rest_framework as filters
 
 from financial.models import AccountPayable
 from financial.serializers import AccountPayableSerializer
+from financial.filters import AccountPayableFilter
 
 
 class AccountPayableListAPIView(ListAPIView):
     queryset = AccountPayable.objects.all()
     serializer_class = AccountPayableSerializer
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = AccountPayableFilter
 
 
 class AccountPayableCreateAPIView(CreateAPIView):
