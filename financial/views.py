@@ -1,5 +1,5 @@
 from rest_framework.exceptions import ValidationError
-from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveDestroyAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveDestroyAPIView, UpdateAPIView
 from django_filters import rest_framework as filters
 
 from financial.models import AccountPayable
@@ -32,3 +32,13 @@ class AccountPayableRetrieveDestroyAPIView(RetrieveDestroyAPIView):
             })
 
         instance.delete()
+
+
+class AccountPayableUpdateAPIView(UpdateAPIView):
+    queryset = AccountPayable.objects.all()
+    serializer_class = AccountPayableSerializer
+    lookup_field = 'id'
+
+    def update(self, request, *args, **kwargs):
+        kwargs['partial'] = True
+        return super().update(request, *args, **kwargs)

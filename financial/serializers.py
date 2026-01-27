@@ -20,6 +20,16 @@ class AccountPayableSerializer(serializers.ModelSerializer):
 
 
     def validate(self, data):
+        if self.instance:
+            forbidden_fields = {'supplier', 'total_amount'}
+            invalid = forbidden_fields.intersection(data.keys())
+
+            if invalid:
+                raise serializers.ValidationError({
+                    field: 'This field is required.'
+                    for field in invalid
+                })
+
         supplier = data.get('supplier') or self.instance.supplier
         invoices = data.get('invoices')
 
