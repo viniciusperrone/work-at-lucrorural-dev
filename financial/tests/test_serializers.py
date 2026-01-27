@@ -86,3 +86,22 @@ class AccountPayableSerializerTestCase(TestCase):
 
         with self.assertRaises(ValidationError):
             serializer.is_valid(raise_exception=True)
+
+    def test_update_account_payable_add_wrong_supplier_invoice(self):
+        """Test updating account payable to add invoice from different supplier - should fail"""
+        account_payable = AccountPayable.objects.create(
+            supplier=self.supplier1,
+            deadline='2025-02-15',
+            is_paid=False,
+        )
+
+        account_payable.invoices.add(self.invoice1)
+
+        data = {
+            'invoices': [self.invoice1.id, self.invoice3.id]
+        }
+
+        serializer = AccountPayableSerializer(account_payable, data=data, partial=True)
+
+        with self.assertRaises(ValidationError):
+            serializer.is_valid(raise_exception=True)
