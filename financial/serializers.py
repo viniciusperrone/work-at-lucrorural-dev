@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.utils.translation import gettext_lazy as _
 
 from financial.models import AccountPayable
 from supply.serializers import SupplierSerializer
@@ -26,7 +27,7 @@ class AccountPayableSerializer(serializers.ModelSerializer):
 
             if invalid:
                 raise serializers.ValidationError({
-                    field: 'This field is required.'
+                    field: _('Esse campo é obrigatório.')
                     for field in invalid
                 })
 
@@ -45,7 +46,7 @@ class AccountPayableSerializer(serializers.ModelSerializer):
 
             if len(invalid) > 0:
                 raise serializers.ValidationError({
-                    'invoices': 'All invoices must belong to the same supplier'
+                    'invoices': _('As notas ficais precisam ter o mesmo fornecedor')
                 })
 
         return data

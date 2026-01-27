@@ -1,6 +1,7 @@
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveDestroyAPIView, UpdateAPIView
 from django_filters import rest_framework as filters
+from django.utils.translation import gettext_lazy as _
 
 from financial.models import AccountPayable
 from financial.serializers import AccountPayableSerializer
@@ -28,7 +29,7 @@ class AccountPayableRetrieveDestroyAPIView(RetrieveDestroyAPIView):
     def perform_destroy(self, instance):
         if instance.invoices.exists():
             raise ValidationError({
-                'detail': 'Cannot delete multiple. There are linked invoices.'
+                'detail': _('Não é possível excluir. Existem notas fiscais vinculadas.')
             })
 
         instance.delete()
