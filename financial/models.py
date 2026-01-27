@@ -16,3 +16,10 @@ class AccountPayable(models.Model):
     @property
     def total_amount(self):
         return self.invoices.aggregate(total=Sum('total_amount'))['total'] or 0.0
+
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['deadline']),
+            models.Index(fields=['supplier', 'deadline']),
+        ]
