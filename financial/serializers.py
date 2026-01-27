@@ -10,7 +10,7 @@ class AccountPayableSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AccountPayable
-        fields = ['id', 'supplier', 'deadline', 'is_paid', 'total_amount']
+        fields = ['id', 'supplier', 'deadline', 'is_paid', 'total_amount', 'invoices']
 
 
     def to_representation(self, instance):
@@ -21,16 +21,6 @@ class AccountPayableSerializer(serializers.ModelSerializer):
 
 
     def validate(self, data):
-        if self.instance:
-            forbidden_fields = {'supplier', 'total_amount'}
-            invalid = forbidden_fields.intersection(data.keys())
-
-            if invalid:
-                raise serializers.ValidationError({
-                    field: _('Esse campo é obrigatório.')
-                    for field in invalid
-                })
-
         supplier = data.get('supplier') or self.instance.supplier
         invoices = data.get('invoices')
 

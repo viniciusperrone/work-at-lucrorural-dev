@@ -4,7 +4,7 @@
 """
 
 from django.test import TestCase
-from rest_framework.exceptions import ValidationError
+from rest_framework.serializers import ValidationError
 from decimal import Decimal
 
 from supply.models import Supplier
@@ -72,3 +72,17 @@ class AccountPayableSerializerTestCase(TestCase):
         account_payable.invoices.set(data['invoices'])
 
         self.assertEqual(account_payable.invoices.count(), 2)
+
+    def test_create_account_payable_with_different_supplier_invoices(self):
+        """Test creating account payable with invoices from different suppliers - should fail"""
+        data = {
+            'supplier': self.supplier1.id,
+            'deadline': '2025-02-15',
+            'is_paid': False,
+            'invoices': [self.invoice1.id, self.invoice3.id]
+        }
+
+        serializer = AccountPayableSerializer(data=data)
+
+        with self.assertRaises(ValidationError):
+            serializer.is_valid(raise_exception=True)
