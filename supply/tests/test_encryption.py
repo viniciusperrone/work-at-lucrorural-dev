@@ -17,3 +17,11 @@ class SupplierEncryptionTestCase(TestCase):
         self.assertNotEquals(encrypted, phone)
         self.assertTrue(encrypted.startswith("gAAAA"))
 
+
+    def test_decryption_phone(self):
+        phone = "(41) 99999-9999"
+
+        encrypted = Supplier.encrypt_phone(phone)
+        decrypted = Supplier.decrypt_phone(encrypted)
+
+        self.assertEqual(decrypted, phone)
