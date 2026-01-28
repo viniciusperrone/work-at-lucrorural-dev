@@ -8,6 +8,7 @@ from django.conf import settings
 from contabil.models import Invoice
 from supply.models import Supplier
 
+
 class Command(BaseCommand):
 
     def add_arguments(self, parser):

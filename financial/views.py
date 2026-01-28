@@ -14,11 +14,9 @@ class AccountPayableListAPIView(ListAPIView):
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = AccountPayableFilter
 
-
 class AccountPayableCreateAPIView(CreateAPIView):
     queryset = AccountPayable.objects.all()
     serializer_class = AccountPayableSerializer
-
 
 class AccountPayableRetrieveDestroyAPIView(RetrieveDestroyAPIView):
     queryset = AccountPayable.objects.all()
@@ -33,7 +31,6 @@ class AccountPayableRetrieveDestroyAPIView(RetrieveDestroyAPIView):
             })
 
         instance.delete()
-
 
 class AccountPayableUpdateAPIView(UpdateAPIView):
     queryset = AccountPayable.objects.all()

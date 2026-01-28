@@ -19,7 +19,6 @@ class AccountPayableSerializer(serializers.ModelSerializer):
 
         return data
 
-
     def validate(self, data):
         supplier = data.get('supplier') or self.instance.supplier
         invoices = data.get('invoices')

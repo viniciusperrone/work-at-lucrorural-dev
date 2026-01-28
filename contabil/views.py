@@ -7,4 +7,3 @@ from contabil.serializers import InvoiceSerializer
 class InvoiceListView(ListAPIView):
     queryset = Invoice.objects.all()
     serializer_class = InvoiceSerializer
-
