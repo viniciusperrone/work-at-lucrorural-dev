@@ -7,17 +7,16 @@ from cryptography.fernet import Fernet, InvalidToken
 import base64
 import hashlib
 
+
 class Supplier(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=100, verbose_name=_('Nome'))
     cnpj = models.CharField(max_length=18, verbose_name=_('CNPJ'))
     phone = models.CharField(max_length=255, verbose_name=_('Telefone'))
 
-
     class Meta:
         verbose_name = _('Fornecedor')
         verbose_name_plural = _('Fornecedores')
-
 
     @staticmethod
     def get_encryption_key():

@@ -12,7 +12,6 @@ class SupplierSerializer(serializers.ModelSerializer):
         model = Supplier
         fields = ['id', 'name', 'cnpj', 'phone', 'phone']
 
-
     def get_cnpj(self, obj):
 
         return format_cnpj_safe(obj.cnpj)

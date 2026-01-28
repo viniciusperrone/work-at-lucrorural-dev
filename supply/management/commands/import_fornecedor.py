@@ -51,7 +51,7 @@ class Command(BaseCommand):
             )
 
             return
-        except Exception as e:
+        except Exception:
             self.stdout.write(
                 self.style.ERROR('Error importing supplier data')
             )
