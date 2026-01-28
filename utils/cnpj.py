@@ -1,5 +1,5 @@
 import re
-from brutils import format_cnpj, is_valid_cnpj
+from brutils import format_cnpj
 
 
 def format_cnpj_safe(cnpj):
