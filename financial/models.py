@@ -12,11 +12,9 @@ class AccountPayable(models.Model):
     is_paid = models.BooleanField(default=False, verbose_name=_('Pago'))
     invoices = models.ManyToManyField('contabil.Invoice', related_name='account_payable', blank=True, verbose_name=_('Notas Fiscais'))
 
-
     @property
     def total_amount(self):
         return self.invoices.aggregate(total=Sum('total_amount'))['total'] or 0.0
-
 
     class Meta:
         indexes = [

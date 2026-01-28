@@ -12,7 +12,6 @@ class AccountPayableSerializer(serializers.ModelSerializer):
         model = AccountPayable
         fields = ['id', 'supplier', 'deadline', 'is_paid', 'total_amount', 'invoices']
 
-
     def to_representation(self, instance):
         data = super().to_representation(instance)
         data['supplier'] = SupplierSerializer(instance.supplier).data
