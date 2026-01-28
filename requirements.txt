@@ -12,6 +12,7 @@ flake8==7.3.0
 holidays==0.58
 mccabe==0.7.0
 num2words==0.5.14
+psycopg2-binary==2.9.11
 pycodestyle==2.14.0
 pycparser==3.0
 pyflakes==3.4.0
