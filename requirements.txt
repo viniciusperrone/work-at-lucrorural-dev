@@ -8,9 +8,13 @@ django-br-utils==0.4
 django-filter==25.2
 djangorestframework==3.16.1
 docopt==0.6.2
+flake8==7.3.0
 holidays==0.58
+mccabe==0.7.0
 num2words==0.5.14
+pycodestyle==2.14.0
 pycparser==3.0
+pyflakes==3.4.0
 python-dateutil==2.9.0.post0
 python-stdnum==2.2
 six==1.17.0
