@@ -1,0 +1,286 @@
+[
+  {
+    "id": "11111111-1111-1111-1111-111111111111",
+    "supplier": {
+      "id": "a1111111-1111-1111-1111-aaaaaaaaaaaa",
+      "name": "Agro Insumos São José",
+      "cnpj": "12.345.678/0001-90",
+      "phone": "+55 11 98765-4321"
+    },
+    "deadline": "2026-02-15",
+    "is_paid": false,
+    "invoices": [
+      {
+        "id": "f1111111-1111-1111-1111-ffffffffffff",
+        "invoice_number": 10234,
+        "supplier_id": "a1111111-1111-1111-1111-aaaaaaaaaaaa",
+        "issue_date": "2026-01-10",
+        "product_name": "Fertilizante NPK 20-20-20",
+        "product_category": "Fertilizante",
+        "quantity": 50,
+        "total_amount": 3500.75
+      },
+      {
+        "id": "f1111111-1111-1111-1111-eeeeeeeeeeee",
+        "invoice_number": 10287,
+        "supplier_id": "a1111111-1111-1111-1111-aaaaaaaaaaaa",
+        "issue_date": "2026-01-18",
+        "product_name": "Semente de Milho Híbrido",
+        "product_category": "Sementes",
+        "quantity": 100,
+        "total_amount": 1499.25
+      }
+    ],
+    "total_amount": 5000.00
+  },
+  {
+    "id": "22222222-2222-2222-2222-222222222222",
+    "supplier": {
+      "id": "b2222222-2222-2222-2222-bbbbbbbbbbbb",
+      "name": "Cooperativa Verde Vale",
+      "cnpj": "98.765.432/0001-12",
+      "phone": "+55 21 91234-5678"
+    },
+    "deadline": "2026-02-20",
+    "is_paid": true,
+    "invoices": [
+      {
+        "id": "f2222222-2222-2222-2222-fffffffffff1",
+        "invoice_number": 10301,
+        "supplier_id": "b2222222-2222-2222-2222-bbbbbbbbbbbb",
+        "issue_date": "2026-01-15",
+        "product_name": "Adubo Orgânico",
+        "product_category": "Fertilizante",
+        "quantity": 80,
+        "total_amount": 4200.50
+      },
+      {
+        "id": "f2222222-2222-2222-2222-fffffffffff2",
+        "invoice_number": 10302,
+        "supplier_id": "b2222222-2222-2222-2222-bbbbbbbbbbbb",
+        "issue_date": "2026-01-18",
+        "product_name": "Semente de Soja",
+        "product_category": "Sementes",
+        "quantity": 150,
+        "total_amount": 4000.00
+      }
+    ],
+    "total_amount": 8200.50
+  },
+  {
+    "id": "33333333-3333-3333-3333-333333333333",
+    "supplier": {
+      "id": "c3333333-3333-3333-3333-cccccccccccc",
+      "name": "Fazenda Boa Vista",
+      "cnpj": "23.456.789/0001-34",
+      "phone": "+55 31 99876-5432"
+    },
+    "deadline": "2026-03-01",
+    "is_paid": false,
+    "invoices": [
+      {
+        "id": "f3333333-3333-3333-3333-fffffffffff3",
+        "invoice_number": 10412,
+        "supplier_id": "c3333333-3333-3333-3333-cccccccccccc",
+        "issue_date": "2026-02-10",
+        "product_name": "Milho Verdao",
+        "product_category": "Grãos",
+        "quantity": 200,
+        "total_amount": 6000.00
+      }
+    ],
+    "total_amount": 6000.00
+  },
+  {
+    "id": "44444444-4444-4444-4444-444444444444",
+    "supplier": {
+      "id": "d4444444-4444-4444-4444-dddddddddddd",
+      "name": "AgroTech Ltda",
+      "cnpj": "34.567.890/0001-56",
+      "phone": "+55 41 98765-4321"
+    },
+    "deadline": "2026-03-05",
+    "is_paid": false,
+    "invoices": [
+      {
+        "id": "f4444444-4444-4444-4444-fffffffffff4",
+        "invoice_number": 10510,
+        "supplier_id": "d4444444-4444-4444-4444-dddddddddddd",
+        "issue_date": "2026-02-20",
+        "product_name": "Trator Agrícola",
+        "product_category": "Máquinas",
+        "quantity": 1,
+        "total_amount": 55000.00
+      }
+    ],
+    "total_amount": 55000.00
+  },
+  {
+    "id": "55555555-5555-5555-5555-555555555555",
+    "supplier": {
+      "id": "e5555555-5555-5555-5555-eeeeeeeeeeee",
+      "name": "Sementes Paulista",
+      "cnpj": "45.678.901/0001-78",
+      "phone": "+55 51 91234-5678"
+    },
+    "deadline": "2026-03-10",
+    "is_paid": true,
+    "invoices": [
+      {
+        "id": "f5555555-5555-5555-5555-fffffffffff5",
+        "invoice_number": 10620,
+        "supplier_id": "e5555555-5555-5555-5555-eeeeeeeeeeee",
+        "issue_date": "2026-03-01",
+        "product_name": "Semente de Trigo",
+        "product_category": "Sementes",
+        "quantity": 120,
+        "total_amount": 3600.00
+      }
+    ],
+    "total_amount": 3600.00
+  },
+  {
+    "id": "66666666-6666-6666-6666-666666666666",
+    "supplier": {
+      "id": "f6666666-6666-6666-6666-ffffffffffff",
+      "name": "AgroBio Ltda",
+      "cnpj": "56.789.012/0001-90",
+      "phone": "+55 61 98765-4321"
+    },
+    "deadline": "2026-03-15",
+    "is_paid": false,
+    "invoices": [
+      {
+        "id": "f6666666-6666-6666-6666-fffffffffff6",
+        "invoice_number": 10733,
+        "supplier_id": "f6666666-6666-6666-6666-ffffffffffff",
+        "issue_date": "2026-03-05",
+        "product_name": "Fertilizante Orgânico",
+        "product_category": "Fertilizante",
+        "quantity": 75,
+        "total_amount": 4500.50
+      }
+    ],
+    "total_amount": 4500.50
+  },
+  {
+    "id": "77777777-7777-7777-7777-777777777777",
+    "supplier": {
+      "id": "g7777777-7777-7777-7777-gggggggggggg",
+      "name": "Fazenda Nova Era",
+      "cnpj": "67.890.123/0001-12",
+      "phone": "+55 71 91234-5678"
+    },
+    "deadline": "2026-03-20",
+    "is_paid": false,
+    "invoices": [
+      {
+        "id": "f7777777-7777-7777-7777-fffffffffff7",
+        "invoice_number": 10844,
+        "supplier_id": "g7777777-7777-7777-7777-gggggggggggg",
+        "issue_date": "2026-03-10",
+        "product_name": "Soja Premium",
+        "product_category": "Grãos",
+        "quantity": 180,
+        "total_amount": 5400.00
+      }
+    ],
+    "total_amount": 5400.00
+  },
+  {
+    "id": "88888888-8888-8888-8888-888888888888",
+    "supplier": {
+      "id": "h8888888-8888-8888-8888-hhhhhhhhhhhh",
+      "name": "AgroFertil Ltda",
+      "cnpj": "78.901.234/0001-34",
+      "phone": "+55 81 98765-4321"
+    },
+    "deadline": "2026-03-25",
+    "is_paid": true,
+    "invoices": [
+      {
+        "id": "f8888888-8888-8888-8888-fffffffffff8",
+        "invoice_number": 10955,
+        "supplier_id": "h8888888-8888-8888-8888-hhhhhhhhhhhh",
+        "issue_date": "2026-03-15",
+        "product_name": "Fertilizante NPK 10-10-10",
+        "product_category": "Fertilizante",
+        "quantity": 100,
+        "total_amount": 5000.00
+      }
+    ],
+    "total_amount": 5000.00
+  },
+  {
+    "id": "99999999-9999-9999-9999-999999999999",
+    "supplier": {
+      "id": "i9999999-9999-9999-9999-iiiiiiiiiiii",
+      "name": "Sementes do Sul",
+      "cnpj": "89.012.345/0001-56",
+      "phone": "+55 91 91234-5678"
+    },
+    "deadline": "2026-03-30",
+    "is_paid": false,
+    "invoices": [
+      {
+        "id": "f9999999-9999-9999-9999-fffffffffff9",
+        "invoice_number": 11066,
+        "supplier_id": "i9999999-9999-9999-9999-iiiiiiiiiiii",
+        "issue_date": "2026-03-20",
+        "product_name": "Semente de Milho Híbrido",
+        "product_category": "Sementes",
+        "quantity": 130,
+        "total_amount": 3900.00
+      }
+    ],
+    "total_amount": 3900.00
+  },
+  {
+    "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "supplier": {
+      "id": "jaaaaaaaa-aaaa-aaaa-aaaa-jjjjjjjjjjjj",
+      "name": "Cooperativa Agro Vale",
+      "cnpj": "90.123.456/0001-78",
+      "phone": "+55 31 98765-4321"
+    },
+    "deadline": "2026-04-05",
+    "is_paid": true,
+    "invoices": [
+      {
+        "id": "faaaaaaaa-aaaa-aaaa-aaaa-fffffffffffa",
+        "invoice_number": 11177,
+        "supplier_id": "jaaaaaaaa-aaaa-aaaa-aaaa-jjjjjjjjjjjj",
+        "issue_date": "2026-03-25",
+        "product_name": "Adubo Mineral",
+        "product_category": "Fertilizante",
+        "quantity": 60,
+        "total_amount": 2700.00
+      }
+    ],
+    "total_amount": 2700.00
+  },
+  {
+    "id": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+    "supplier": {
+      "id": "kbbbbbbbb-bbbb-bbbb-bbbb-kkkkkkkkkkkk",
+      "name": "Agro Produtos LTDA",
+      "cnpj": "01.234.567/0001-90",
+      "phone": "+55 41 91234-5678"
+    },
+    "deadline": "2026-04-10",
+    "is_paid": false,
+    "invoices": [
+      {
+        "id": "fbbbbbbbb-bbbb-bbbb-bbbb-fffffffffffb",
+        "invoice_number": 11288,
+        "supplier_id": "kbbbbbbbb-bbbb-bbbb-bbbb-kkkkkkkkkkkk",
+        "issue_date": "2026-03-30",
+        "product_name": "Trator Agrícola",
+        "product_category": "Máquinas",
+        "quantity": 1,
+        "total_amount": 58000.00
+      }
+    ],
+    "total_amount": 58000.00
+  }
+]
